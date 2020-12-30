@@ -10,13 +10,13 @@ numpy = "*"
 requests = "*"
 tinydb = "*"
 pretty-errors = "*"
+tqdm = "*"
 
 [dev-packages]
 jupyter = "*"
 pytest = "*"
 pandas = "*"
-tqdm = "*"
 deep-translator = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.7"

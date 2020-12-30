@@ -3,6 +3,7 @@ from tinydb import table, TinyDB
 from Helper import send_message
 import pretty_errors
 import os
+from tqdm import tqdm
 
 db_path = os.path.split(os.path.realpath(__file__))[0] +'/datastore/house_data.json'
 
@@ -12,7 +13,7 @@ fs = FinnScraper("https://www.finn.no/realestate/homes/search.html?page={}&publi
 finn_codes = fs.get_ad_codes(npages=25, verbose=1)
 
 ad_counter = 0
-for finn_code in finn_codes:
+for finn_code in tqdm(finn_codes):
     if db.contains(doc_id=finn_code):
         continue
 
