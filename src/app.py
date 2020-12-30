@@ -2,8 +2,11 @@ from FinnScraper import FinnScraper
 from tinydb import table, TinyDB
 from Helper import send_message
 import pretty_errors
+import os
 
-db = TinyDB('datastore/house_data.json')
+db_path = os.path.split(os.path.realpath(__file__))[0] +'/datastore/house_data.json'
+
+db = TinyDB(db_path)
 fs = FinnScraper("https://www.finn.no/realestate/homes/search.html?page={}&published=1&sort=PUBLISHED_DESC")
 # fs = FinnScraper("https://www.finn.no/realestate/homes/search.html?page={}")
 finn_codes = fs.get_ad_codes(npages=25, verbose=1)
