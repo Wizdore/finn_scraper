@@ -5,6 +5,15 @@ This application scrapes, stores and notifies the user through Discord bot of sc
 * Mines house on sale data from finn
 * Stores the data in a database in `datastore/` directory
 * Notifies the user over discord on how many houses has been scraped
+##### Tested on
+* Arch Linux on a Laptop
+* RaspberryPi OS on RaspberryPi 4B
 
 The project also includes a bash script `cronjob.sh` that can be used to periodically run the application using crontab on linux. 
 Im using `pipenv` for package and environment management, `TinyDB` for database and Discord's webhook to send message to discord server. The webhook needs to be saved in a `.env` file in the project directory as an environment variable named `DISCORD_WEBHOOK`, pipenv will load the environment variable.
+
+TODO:
+- [x] Deterministic Build System
+- [ ] More robust scraping error reporting
+- [ ] Scraping Job posts
+- [ ] Dashboarding
