@@ -9,7 +9,7 @@ selenium = "*"
 numpy = "*"
 requests = "*"
 tinydb = "*"
-schedule = "*"
+pretty-errors = "*"
 
 [dev-packages]
 jupyter = "*"
@@ -17,7 +17,6 @@ pytest = "*"
 pandas = "*"
 tqdm = "*"
 deep-translator = "*"
-pretty-errors = "*"
 
 [requires]
 python_version = "3.9"
