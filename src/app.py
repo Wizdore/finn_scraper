@@ -4,6 +4,11 @@ from Helper import send_message
 import pretty_errors
 import os
 from tqdm import tqdm
+from datetime import date
+
+today = date.today()
+# dd/mm/YY
+todays_date = today.strftime("%d/%m/%Y")
 
 db_path = os.path.split(os.path.realpath(__file__))[0] +'/datastore/house_data.json'
 
@@ -19,6 +24,7 @@ for finn_code in tqdm(finn_codes):
 
     try:
         ad_dict = fs.parse_housing_page(finn_code)
+        ad_dict['scraping_date'] = todays_date
     except Exception as e:
         send_message(f'Error: {str(e)}\n{str(e.__traceback__.tb_frame)}')
         continue
