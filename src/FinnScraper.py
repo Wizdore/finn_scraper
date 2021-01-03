@@ -13,7 +13,7 @@ class FinnScraper:
         self.url = url
 
     def close_driver(self):
-        self.driver.close()
+        self.driver.quit()
 
 
     def get_ad_codes(self, npages=50, verbose=0):
