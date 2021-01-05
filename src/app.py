@@ -20,10 +20,10 @@ try:
     finn_codes = fs.get_ad_codes(npages=25, verbose=1)
 except Exception as e:
     send_message(f'Error: {str(e)}\n{str(e.__traceback__.tb_frame)}')
-finally:
-    db.close()
-    fs.close_driver()
-    exit()
+    if len(finn_codes) == 0:
+        db.close()
+        fs.close_driver()
+        exit()
 
 ad_counter = 0
 for finn_code in tqdm(finn_codes):
