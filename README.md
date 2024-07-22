@@ -16,4 +16,4 @@ TODO:
 - [x] Deterministic Build System
 - [ ] More robust scraping error reporting
 - [ ] Scraping Job posts
-- [ ] Dashboarding
+- [x] Dashboarding
